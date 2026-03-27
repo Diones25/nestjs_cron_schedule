@@ -1,51 +1,98 @@
-# Projeto Schedule
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+</p>
 
-Este projeto é um sistema de gerenciamento de agendamentos e tarefas desenvolvido em Node.js utilizando TypeScript.
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-## Tecnologias e Bibliotecas
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-Abaixo estão as principais bibliotecas identificadas no projeto e suas respectivas funções:
+## Description
 
-- **[TypeScript](https://www.typescriptlang.org/)**: Linguagem base que adiciona tipagem estática ao JavaScript. O projeto conta com suporte a mensagens de diagnóstico internacionalizadas (PT-BR, ES, IT).
-- **[Formidable](https://github.com/node-formidable/formidable)**: Biblioteca especializada no parsing de formulários e uploads de arquivos. É utilizada para capturar dados de tarefas enviados via requisições HTTP complexas.
-- **[Yargs](https://yargs.js.org/)**: Framework para construção de interfaces de linha de comando (CLI). Permite a interação com o sistema de agendamento através do terminal.
-- **Side-Channel (Map/List)**: Utilitários para armazenamento de informações de objetos em canais laterais, garantindo que metadados internos não interfiram na estrutura principal dos objetos de tarefas.
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Arquitetura de Serviços
+## Project setup
 
-### TaskService
+```bash
+$ npm install
+```
 
-O `TaskService` é o serviço responsável pela lógica central das tarefas. Suas principais funções incluem:
+## Compile and run the project
 
-1.  **Manipulação de Tarefas**: Implementa métodos para criar, listar, atualizar e remover agendamentos.
-2.  **Validação de Negócio**: Garante que as datas e horários das tarefas sejam válidos e não entrem em conflito.
-3.  **Segurança de Tipos**: Utiliza interfaces TypeScript para garantir que cada tarefa possua os atributos necessários (como título, descrição, status e data).
+```bash
+# development
+$ npm run start
 
-> _Nota: Para detalhes específicos sobre os métodos implementados na `TaskService`, consulte o arquivo fonte da service._
+# watch mode
+$ npm run start:dev
 
-## Internacionalização (i18n)
+# production mode
+$ npm run start:prod
+```
 
-O projeto está configurado para suportar múltiplos idiomas em suas ferramentas de desenvolvimento, incluindo:
+## Run tests
 
-- Português (Brasil)
-- Espanhol
-- Italiano
+```bash
+# unit tests
+$ npm run test
 
-## Como Iniciar
+# e2e tests
+$ npm run test:e2e
 
-1.  Instale as dependências:
+# test coverage
+$ npm run test:cov
+```
 
-    ```bash
-    npm install
-    ```
+## Deployment
 
-2.  Compile o projeto:
+When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
 
-    ```bash
-    npx tsc
-    ```
+If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
 
-3.  Execute a aplicação:
-    ```bash
-    npm start
-    ```
+```bash
+$ npm install -g @nestjs/mau
+$ mau deploy
+```
+
+With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+
+## Resources
+
+Check out a few resources that may come in handy when working with NestJS:
+
+- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
+- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
+- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
+- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
+- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
+- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
+- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
+- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+
+## Support
+
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+
+## Stay in touch
+
+- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
+
+## License
+
+Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
